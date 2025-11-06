@@ -80,12 +80,19 @@ agrotrack-v2/
 Instalación y ejecución
 
 npm install
+
+mpm install mysql si es que no se lo tiene instalado
 node app.js
+
+Confirmar de que aparezca el mensaje:
+Se inició conexión con MySQL
 
 El servidor se ejecutará en:
 http://localhost:8888
 
-Ejemplos para Postman
+
+
+### Ejemplos para Postman
 ✅ POST válido
 POST http://localhost:8888/api/contactos
 
