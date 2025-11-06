@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "78ad46a0-78bc-4acd-865f-b36c996a5b2c",
+		"name": "Agrotrack V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40699894",
+		"_collection_link": "https://www.postman.com/martinromero99/workspace/agrotrack/collection/40699894-78ad46a0-78bc-4acd-865f-b36c996a5b2c?action=share&source=collection_link&creator=40699894"
+	},
+	"item": [
+		{
+			"name": "Inicio",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8888/"
+			},
+			"response": []
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8888/health"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "usuario",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8888/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar mensajes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8888/api/contactos"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar mensajes con error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Martín\",\r\n  \"mensaje\": \"Hola!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8888/api/contactos"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar contacto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Martín\",\r\n  \"email\": \"martin@gmail.com\",\r\n  \"mensaje\": \"Hola nuevamente!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8888/api/contactos"
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar contactos html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8888/contacto.html"
+			},
+			"response": []
+		}
+	]
+}
