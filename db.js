@@ -1,9 +1,8 @@
-// db.js (SIN dotenv, siguiendo Unidad 4)
 const mysql = require('mysql')
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',        // si tu XAMPP no usa password, dejá string vacío: ''
+    user: 'root',
     password: '',
     database: 'agrotrack'
 })
