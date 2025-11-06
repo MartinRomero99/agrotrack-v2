@@ -1,0 +1,15 @@
+{
+  "name": "agrotrack-v2",
+  "version": "1.0.0",
+  "description": "segunda version de agrotrack para presentar",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "martin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}

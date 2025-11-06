@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AgroTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>AgroTrack</h1>
+            <p class="slogan">Acceso al Sistema</p>
+        </header>
+
+        <nav class="menu">
+            <a href="./index.html" class="btn">Inicio</a>
+            <a href="./productos.html" class="btn">Productos</a>
+            <a href="./contacto.html" class="btn">Contacto</a>
+            <a href="./login.html" class="btn active">Login</a>
+        </nav>
+
+        <main>
+            <section class="login-form">
+                <h2>Iniciar Sesión</h2>
+                <p class="demo-nota">Este es un sistema de demostración. Los datos se mostrarán en pantalla.</p>
+
+                <form action="/login" method="POST" class="form-login">
+                    <div class="campo">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="clave">Contraseña:</label>
+                        <input type="password" id="clave" name="clave" placeholder="Ingresa tu contraseña" required>
+                    </div>
+
+                    <button type="submit" class="btn enviar">Ingresar al Sistema</button>
+                </form>
+
+                <div class="info-demo">
+                    <h3>Información de Demostración</h3>
+                    <p>Este formulario simula un proceso de login. Al enviar los datos,
+                        se mostrarán en pantalla para demostrar el funcionamiento del sistema.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 AgroTrack - Martín Romero - IUA</p>
+        </footer>
+    </div>
+</body>
+
+</html>

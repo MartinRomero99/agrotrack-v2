@@ -1,0 +1,16 @@
+# Carpeta de datos generados por la aplicación
+data/
+
+# Dependencias de Node.js
+node_modules/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log
+
+# Archivos de entorno
+.env
+.env.*

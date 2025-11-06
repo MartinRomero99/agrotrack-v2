@@ -1,0 +1,337 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 2px solid #2e7d32;
+}
+
+header h1 {
+    color: #2e7d32;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.slogan {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* Navegación */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #1b5e20;
+}
+
+.btn.active {
+    background-color: #1b5e20;
+    font-weight: bold;
+}
+
+.btn.secundario {
+    background-color: #6c757d;
+}
+
+.btn.secundario:hover {
+    background-color: #545b62;
+}
+
+.btn.enviar {
+    background-color: #1565c0;
+    font-size: 18px;
+    padding: 15px 30px;
+}
+
+.btn.enviar:hover {
+    background-color: #0d47a1;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    margin-bottom: 40px;
+}
+
+/* Secciones generales */
+section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Página de inicio */
+.caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.caracteristica {
+    padding: 20px;
+    background: #e8f5e9;
+    border-radius: 8px;
+    border-left: 4px solid #2e7d32;
+}
+
+/* Página de productos */
+.lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.producto {
+    padding: 25px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    border-left: 4px solid #1565c0;
+}
+
+.producto ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.producto li {
+    margin-bottom: 5px;
+}
+
+.servicios-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.servicio {
+    padding: 20px;
+    background: #f3e5f5;
+    border-radius: 8px;
+    border-left: 4px solid #7b1fa2;
+}
+
+/* Formularios */
+.form-contacto,
+.form-login {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+/* Información de contacto */
+.contactos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contacto-item {
+    padding: 15px;
+    background: #fff3e0;
+    border-radius: 5px;
+}
+
+/* Login */
+.demo-nota {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #856404;
+}
+
+.info-demo {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e8f5e9;
+    border-radius: 5px;
+}
+
+/* Consultas */
+.consultas {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.sin-consultas {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px;
+}
+
+/* Datos de login */
+.datos-login {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.datos-login p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Acciones adicionales */
+.acciones,
+.acciones-adicionales {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    color: #666;
+    margin-top: auto;
+}
+
+/* Páginas de error */
+.error {
+    text-align: center;
+    background: #ffebee;
+    border-left: 4px solid #c62828;
+}
+
+.error h1 {
+    color: #c62828;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 200px;
+    }
+
+    .caracteristicas,
+    .lista-productos,
+    .servicios-lista,
+    .contactos {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
