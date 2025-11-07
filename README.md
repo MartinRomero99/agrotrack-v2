@@ -29,67 +29,116 @@ También se agrega **login de demostración** y **middleware de registro de soli
 
 ---
 
-## 🗂️ Estructura del proyecto
+## Estructura del proyecto
 
-
-agrotrackAO2/ 
+```
 agrotrack-v2/
 ├─ app.js # Servidor principal Express
-
-
 ├─ config/db.js # Conexión a MySQL
-
-
 ├─ routes/
-
 │ └─ contactos.js # Endpoints /api/contactos
-
 ├─ middleware/
-
 │ ├─ logger.js # Middleware de registro de solicitudes HTTP
-
 │ └─ errorHandler.js # Manejo centralizado de errores
-
-
 ├─ public/ # Archivos estáticos (HTML, CSS, imágenes)
-
 │ ├─ index.html
 │ ├─ contacto.html
 │ ├─ productos.html
 │ ├─ login.html
 │ └─ style.css
-
-
 ├─ sql/
-
 │ └─ schema.sql # Script para crear la BD y tabla de contactos
-
-
 ├─ .env.example # Solo referencia de configuración
-
-
 ├─ package.json
-
-
 ├─ package-lock.json
-
-
 └─ README.md
+```
 
+---
+Variables de entorno
+Archivo **.env** en la raíz del proyecto basado en el `.env.example`:
 
-Instalación y ejecución
+```bash
+PORT=8888
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=agrotrack
+```
+---
 
+Base de datos
+Ejecutar el siguiente script para crear la base y la tabla necesarias:
+
+**Archivo:** `sql/schema.sql`
+```sql
+CREATE DATABASE IF NOT EXISTS agrotrack;
+USE agrotrack;
+
+CREATE TABLE IF NOT EXISTS contactos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre  VARCHAR(100) NOT NULL,
+  email   VARCHAR(150) NOT NULL,
+  mensaje TEXT NOT NULL,
+  fecha   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+---
+
+## Instalación y ejecución
+```bash
+# Instalar dependencias
 npm install
 
-mpm install mysql si es que no se lo tiene instalado
+mpm install mysql  #(si es que no se lo tiene instalado)
+
+# Ejecutar
 node app.js
 
-Confirmar de que aparezca el mensaje:
+# Confirmar de que aparezca el mensaje:
 Se inició conexión con MySQL
+El servidor se ejecutará en: http://localhost:8888
+```
+---
+## Endpoints disponibles
 
-El servidor se ejecutará en:
-http://localhost:8888
+| Método | Ruta | Descripción |
+|---------|------|-------------|
+| GET | `/health` | Verifica el estado del servidor |
+| GET | `/api/contactos` | Devuelve todas las consultas registradas |
+| POST | `/api/contactos` | Registra una nueva consulta (nombre, email, mensaje) siempre y cuando esté bien escrita |
 
+---
+
+## Ejemplo de uso (POST /api/contactos)
+
+**Request:**
+```json
+{
+  "nombre": "Martín",
+  "email": "martin.rome99@gmail.com",
+  "mensaje": "Hola Agro!"
+}
+```
+
+**Response (201 Created):**
+```json
+{
+  "id": 1,
+  "nombre": "Martín",
+  "email": "martin.rome99@gmail.com",
+  "mensaje": "Hola Agro!"
+}
+```
+
+**Error (400):**
+```json
+{ "error": "Todos los campos son obligatorios" }
+```
+
+---
 
 
 ### Ejemplos para Postman
@@ -134,5 +183,31 @@ Body:
   "clave": "1234"
 }
 
+---
 
+## 🔐 Login de demostración
+
+El sistema incluye una página de **login básico** (demo) accesible desde:
+
+```
+http://localhost:8888/login.html
+```
+
+### Descripción
+El login no valida contra una base de datos: es solo una **prueba funcional** para evaluar el flujo de envío y respuesta.  
+Las credenciales válidas se definen manualmente en el archivo **`app.js`**.
+
+### Cómo usarlo
+
+1. Ingresar a `http://localhost:3000/login.html`  
+2. Escribir las credenciales predefinidas:
+
+| Usuario | Contraseña |
+|----------|-------------|
+| `admin`  | `1234` |
+
+3. Presionar **Enviar**.  
+   - Si los datos son correctos, aparecerá un mensaje de éxito y el sistema redirigirá automáticamente mostrará un mensaje de Bienvenida.
+  
+  
 
