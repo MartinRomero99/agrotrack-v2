@@ -92,10 +92,10 @@ CREATE TABLE IF NOT EXISTS contactos (
 # Instalar dependencias
 npm install
 
-mpm install mysql  #(si es que no se lo tiene instalado)
+# Ejecutar el servidor
+npm start
 
-# Ejecutar
-node app.js
+# También funciona con node app.js
 
 # Confirmar de que aparezca el mensaje:
 Se inició conexión con MySQL
